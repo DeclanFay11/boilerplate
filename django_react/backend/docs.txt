@@ -1,0 +1,33 @@
+Boilerplate code for Django + React website
+
+start backend (Django)
+    set up venv
+    django-admin startproject backend
+    python manage.py startapp api
+    add api to installed apps
+    add rest_framework to installed apps
+
+set up virtual env
+    cd /backend
+    python -m venv venv
+    source venv/bin/activate
+
+setup frontend
+    npx create-react-app frontend
+
+configure backend settings
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
+
+    make .env file
+
+    from dotenv import load_dotenv
+    load_dotenv('./.env')
+    
+    CORS_ALLOWED_ORIGINS = [
+        DJANGO_BASE_FRONTEND_URL,
+    ]
+    CSRF_TRUSTED_ORIGINS = [
+        DJANGO_BASE_FRONTEND_URL,  
+    ]
